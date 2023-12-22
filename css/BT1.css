@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    background: #30a3fb;
+    height: 100vh;
+    overflow: hidden;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.list {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    gap: 20px;
+    width: 200px;
+}
+
+label {
+    color: #30a3fb;
+    font-size: 50px;
+}
+
+a {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0 50px;
+    color: #30a3fb;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+a:hover {
+    background: lightgray;
+    border-radius: 5px;
+}
+
+.item {
+    position: relative;
+    z-index: 1;
+}
+
+.item::after {
+    position: absolute;
+    z-index: -1;
+    display: inline-block;
+    content: "";
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: white;
+    left: -100px;
+    top: -100px;
+    transition: 0.4s;
+}
+
+.bars {
+    transition: 0.2s;
+}
+
+.arrow {
+    position: absolute;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+#checkbox:checked ~ .item .bars {
+    scale: 0;
+}
+
+#checkbox:checked ~ .item .arrow {
+    scale: 1;
+    opacity: 1;
+    rotate: 180deg;
+}
+
+#checkbox:checked ~ .item::after {
+    scale: 50;
+}
+
+.title {
+    text-align: end;
+    color: white;
+    margin: 200px 200px 0 0;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 600;
+}
+
+span {
+    font-size: 16px;
+}
+
+p {
+    font-size: 24px;
+    font-weight: lighter;
+}
